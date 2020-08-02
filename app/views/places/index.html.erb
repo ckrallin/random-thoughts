@@ -1,1 +1,10 @@
-<h1>hello</h1>
+<div class="container">
+  <% @places.each do |place| %>
+    <div class="container place">
+      <%= place.location %>
+      <%= place.start %>
+      <%= place.end %>
+    </div>
+  <% end %>
+</div>
+ 
