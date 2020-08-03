@@ -15,13 +15,27 @@
  */
 @import "bootstrap";
 
-body {
-  font-family: 'Permanent Marker', cursive;
-  background: url('assets/images/bg.jpg');
+.navbar-brand > a {
+  font-weight: bold;
+}
+
+.navbar {
+  margin-bottom: 40px;
+}
+.bg-box {
+  background: white;
 }
 
 .place {
-  margin: 30px;
+  text-align: center;
+  padding: 20px;
+}
+
+body {
+  font-family: 'Permanent Marker', cursive;
+  background-image: url('bg.jpg');
+  min-height: 100%;
+  width: 100%;
 }
 
 footer {

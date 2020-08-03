@@ -1,10 +1,13 @@
-<div class="container">
-  <% @places.each do |place| %>
-    <div class="container place">
-      <%= place.location %>
-      <%= place.start %>
-      <%= place.end %>
+<div class="bg-box col-10 offset-1">  
+  <div class="container">
+    <div class="row">
+      <% @places.each do |place| %>
+        <div class="place col-sm-12 col-md-6 col-lg-4">
+          <%= link_to place.location, place_path(place) %>
+          <p><%= place.start %><p>
+          <p><%= place.end %></p>
+        </div>
+      <% end %>
     </div>
-  <% end %>
+  </div>
 </div>
- 
