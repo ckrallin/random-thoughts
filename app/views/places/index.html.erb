@@ -1,13 +1,15 @@
-<div class="bg-box col-10 offset-1">  
-  <div class="container">
-    <div class="row">
-      <% @places.each do |place| %>
-        <div class="place col-sm-12 col-md-6 col-lg-4">
+<h1>Random<br>Thoughts</h1>
+
+<div class="container-fluid">  
+  <div class="row">
+    <% @places.each do |place| %>
+      <div class="place-col col-sm-12 col-md-6 col-lg-3">
+        <div class="place"> 
           <%= link_to place.location, place_path(place) %>
           <p><%= place.start %><p>
           <p><%= place.end %></p>
         </div>
-      <% end %>
-    </div>
+      </div>
+    <% end %>
   </div>
 </div>

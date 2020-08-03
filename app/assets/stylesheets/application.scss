@@ -20,22 +20,45 @@
 }
 
 .navbar {
-  margin-bottom: 40px;
-}
-.bg-box {
-  background: white;
+  margin-bottom: 20px;
 }
 
+.row {
+  margin:auto;
+}
+
+
+
 .place {
+  background: #AFEEEE;
   text-align: center;
   padding: 20px;
+  height: 60px;
+  margin: 20px;
+  opacity: .8;
+  border-radius: 25px;
+  box-shadow: 5px 10px 18px black;
+}
+
+.place > a {
+  color: black;
+}
+
+h1 {
+  text-align: center;
+  display: inline-flex;
+  padding: 10px;
+  background: white;
+  border-radius: 25px;
+  font-size: 50px;
+  opacity: .85;
 }
 
 body {
   font-family: 'Permanent Marker', cursive;
   background-image: url('bg.jpg');
-  min-height: 100%;
-  width: 100%;
+  background-size: cover;
+  text-align: center;
 }
 
 footer {
