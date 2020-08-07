@@ -1,15 +1,29 @@
-<h1>Random<br>Thoughts</h1>
-
+<div class="header">
+  <h1>Random Thoughts</h1>
+</div>
+<div class="col-10 offset-1" id="map"></div>
 <div class="container-fluid">  
   <div class="row">
     <% @places.each do |place| %>
       <div class="place-col col-sm-12 col-md-6 col-lg-3">
         <div class="place"> 
-          <%= link_to place.location, place_path(place) %>
-          <p><%= place.start %><p>
-          <p><%= place.end %></p>
+          <h3><%= link_to place.location, place_path(place) %></h3>
+          <p><%= place.dates %></p>
         </div>
       </div>
     <% end %>
   </div>
 </div>
+<script>
+  // Initialize and add the map
+  function initMap() {
+    var center = {lat: 0, lng: 0};
+    var map = new google.maps.Map(
+        document.getElementById('map'), {zoom: 2.5, center: center});
+    // The marker, positioned at Uluru
+    var marker = new google.maps.Marker({position: myLatLng, map: map});
+  }
+</script>
+<script defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCFAT77SlWfddAgZ-M6IPsgD-szk3IZmOM&callback=initMap">
+</script>
