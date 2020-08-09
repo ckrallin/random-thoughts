@@ -64,4 +64,6 @@ gem 'bootstrap'
 gem 'jquery-rails'
 gem 'devise'
 gem 'geocoder'
+gem 'figaro'
+gem 'simple_form'
 

@@ -9,11 +9,18 @@ class Place < ApplicationRecord
   attr_reader :dates
 
   def dates
-    if self.end == self.start || self.end.nil?
-      return "#{self.start}"
+    if self.start.nil?
+      return ""
+    elsif self.end == self.start || self.end.nil?
+      return "#{convert(self.start)}"
     else
-      return "#{self.end} - #{self.start}"
+      return "#{convert(self.start)} - #{convert(self.end)}"
     end
+  end
+
+  def convert(date)
+    d = Date.parse(date.to_s)
+    return "#{d.month}/#{d.day}/#{d.year}"
   end
 
 end

@@ -24,6 +24,10 @@
     var marker = new google.maps.Marker({position: myLatLng, map: map});
   }
 </script>
-<script defer
-  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCFAT77SlWfddAgZ-M6IPsgD-szk3IZmOM&callback=initMap">
+<script>
+    var script = '<script defer src="https://maps.googleapis.com/maps/api/js?key=' + ENV[API_KEY] + '&callback=initMap"><\/script>';
+    document.write(script);
 </script>
+<!-- <script defer
+  src="https://maps.googleapis.com/maps/api/js?key=ENV[API_KEY]&callback=initMap">
+</script> -->

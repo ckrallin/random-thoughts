@@ -1,0 +1,9 @@
+<div class="col-10 offset-1 form-box">
+  <%= simple_form_for @place do |f| %>
+    <%= f.input :title %>
+    <%= f.input :location %>
+    <%= f.input :start %>
+    <%= f.input :end %>
+    <%= f.button :submit, class: 'btn btn-primary' %>
+  <% end %>
+</div>
