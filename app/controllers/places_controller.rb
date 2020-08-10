@@ -18,10 +18,9 @@ class PlacesController < ApplicationController
     @places = current_user.places.order(start: :desc)
     @place = Place.find(params[:id])
     @thought = Thought.new
-    @thoughts = @place.thoughts
+    @thoughts = @place.thoughts.order("favorite DESC").class
     if @place.user != current_user
       return render plain: 'Unauthorized', status: :unauthorized
-      redirect_to root_path
     end
   end
 

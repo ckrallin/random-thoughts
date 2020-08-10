@@ -2,13 +2,26 @@
   <h1><%=@place.location%></h1>
   <br>
   <h2><%= @place.dates %></h2>
+  <br>
+  <h5 class="thought-button">Add Thought</h5>
 </div>
 <div class="photos"></div>
 <div class="col-10 offset-1 thoughts">
     <% @place.thoughts.each do |thought|%>
-      <div class="thought">
-        <%= thought.description %>
-        <%= thought.favorite %>
+      <div class="thought row">
+        <% if thought.favorite %>
+          <h5 class="fav" style="color: #AFEEEE">&starf;</h5>
+        <% else %>
+          <h5 class="fav">&star;</h5>
+        <% end %>
+        <h5><%= thought.description %></h5>
       </div>
     <% end %>
+</div>
+<div class="col-10 offset-1 form-box">
+  <%= simple_form_for @thought, url: place_thoughts_path(@place) do |f| %>
+    <%= f.input :description %>
+    <%= f.input :favorite, as: :boolean %>
+    <%= f.button :submit, class: 'btn form-button' %>
+  <% end %>
 </div>

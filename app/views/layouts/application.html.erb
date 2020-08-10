@@ -35,7 +35,7 @@
                 New Place
               <% end %>
             </li>
-            <% if !@places.nil? %>
+            <% if !@places.nil? || !@places.blank? %>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Places
@@ -53,10 +53,10 @@
             <% end %>
           </ul>
           <%if user_signed_in? %>
-            <%= link_to '<button type="button">Sign Out</button>'.html_safe, destroy_user_session_path, :method => :delete %>
+            <%= link_to '<button class="form-button" type="button">Sign Out</button>'.html_safe, destroy_user_session_path, :method => :delete %>
           <%else%>
-            <%= link_to '<button type="button">Log In</button>'.html_safe, user_session_path %>
-            <%= link_to '<button type="button">Sign Up</button>'.html_safe, new_user_registration_path %>
+            <%= link_to '<button class="form-button" type="button">Log In</button>'.html_safe, user_session_path %>
+            <%= link_to '<button class="form-button"type="button">Sign Up</button>'.html_safe, new_user_registration_path %>
           <%end%>
         </div>
       </nav>
