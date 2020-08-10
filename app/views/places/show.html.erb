@@ -2,9 +2,13 @@
   <h1><%=@place.location%></h1>
   <br>
   <h2><%= @place.dates %></h2>
-  <p><&=place.user_id%></p>
 </div>
 <div class="photos"></div>
-<div class="thoughts">
-  
+<div class="col-10 offset-1 thoughts">
+    <% @place.thoughts.each do |thought|%>
+      <div class="thought">
+        <%= thought.description %>
+        <%= thought.favorite %>
+      </div>
+    <% end %>
 </div>

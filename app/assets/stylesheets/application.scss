@@ -14,10 +14,7 @@
  *= require_self
  */
 @import "bootstrap";
-
-html, body {
-  height:100%;
-}
+@import "font-awesome";
 
 .navbar-brand > a {
   font-weight: bold;
@@ -31,6 +28,10 @@ html, body {
   text-align: center;
 }
 
+.place-drop {
+  font-size: 10px;
+}
+
 .row {
   margin:auto;
 }
@@ -41,7 +42,7 @@ html, body {
   padding: 20px;
   height: auto;
   margin: 20px;
-  opacity: .8;
+  opacity: .85;
   border-radius: 25px;
   box-shadow: 5px 10px 18px black;
 }
@@ -52,6 +53,21 @@ html, body {
 
 #map {
   margin: 50px auto;
+  border-radius: 25px;
+  box-shadow: 5px 10px 18px black;
+}
+
+.thoughts {
+  margin-top: 20px;
+}
+
+.thought {
+  background: white;
+  padding: 20px;
+  height: auto;
+  opacity: .9;
+  border-radius: 25px;
+  box-shadow: 5px 10px 18px black;
 }
 
 .form-box {
@@ -63,6 +79,12 @@ html, body {
   box-shadow: 5px 10px 18px black;
 }
 
+.form-button {
+  background: #AFEEEE;
+  border-radius: 25px;
+}
+
+
 h1 {
   text-align: center;
   display: inline-flex;
@@ -70,7 +92,7 @@ h1 {
   background: white;
   border-radius: 25px;
   font-size: 50px;
-  opacity: .85;
+  opacity: .9;
 }
 
 h2 {
@@ -79,7 +101,7 @@ h2 {
   padding: 10px;
   background: white;
   border-radius: 25px;
-  opacity: .85;
+  opacity: .9;
 }
 
 body {

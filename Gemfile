@@ -66,4 +66,5 @@ gem 'devise'
 gem 'geocoder'
 gem 'figaro'
 gem 'simple_form'
+gem 'font-awesome-rails'
 
