@@ -67,4 +67,6 @@ gem 'geocoder'
 gem 'figaro'
 gem 'simple_form'
 gem 'font-awesome-rails'
+gem 'date_wrapper'
+gem 'ranked-model'
 

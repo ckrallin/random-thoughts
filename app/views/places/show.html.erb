@@ -3,11 +3,14 @@
   <br>
   <h2><%= @place.dates %></h2>
   <br>
-  <h5 class="thought-button">Add Thought</h5>
+  <br>
+  <button type="button" class="btn form-button" data-toggle="modal" data-target="#newThoughtModal">
+  Add Thought
+  </button>
 </div>
 <div class="photos"></div>
 <div class="col-10 offset-1 thoughts">
-    <% @place.thoughts.each do |thought|%>
+    <% @place.thoughts.rank(:row_order).each do |thought|%>
       <div class="thought row">
         <% if thought.favorite %>
           <h5 class="fav" style="color: #AFEEEE">&starf;</h5>
@@ -18,10 +21,28 @@
       </div>
     <% end %>
 </div>
-<div class="col-10 offset-1 form-box">
-  <%= simple_form_for @thought, url: place_thoughts_path(@place) do |f| %>
-    <%= f.input :description %>
-    <%= f.input :favorite, as: :boolean %>
-    <%= f.button :submit, class: 'btn form-button' %>
-  <% end %>
+
+
+<!-- New Thought Modal -->
+<div class="modal fade" id="newThoughtModal" tabindex="-1" role="dialog" aria-labelledby="newThoughtModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="newThoughtModalLongTitle">Create Thought</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <%= simple_form_for @thought, url: place_thoughts_path(@place) do |f| %>
+        <div class="modal-body">
+          <%= f.input :description, as: :text, :input_html => {:rows => 3} %>
+          <%= f.input :favorite, as: :boolean %>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <%= f.button :submit, class: 'btn form-button' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
 </div>
