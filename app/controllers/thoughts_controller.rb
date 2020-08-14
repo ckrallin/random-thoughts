@@ -11,12 +11,22 @@ class ThoughtsController < ApplicationController
   end
 
   def update
-        
+     current_thought.update_attributes(thought_params)
+     render plain: 'updated'  
   end
 
   private
 
+  def current_thought
+    @current_thought ||= Thought.find(params[:id])
+  end
+
+  helper_method :current_section
+  def current_place
+    @current_place ||= Place.find(params[:place_id])
+  end
+
   def thought_params
-    params.require(:thought).permit(:description, :favorite)
+    params.require(:thought).permit(:description, :favorite, :row_order_position)
   end
 end

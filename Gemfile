@@ -69,4 +69,5 @@ gem 'simple_form'
 gem 'font-awesome-rails'
 gem 'date_wrapper'
 gem 'ranked-model'
+gem 'jquery-ui-rails'
 

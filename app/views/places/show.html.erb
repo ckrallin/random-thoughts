@@ -1,3 +1,18 @@
+<script type="text/javascript">
+  $(()=>{
+    $('.thoughts').sortable({
+      update: (event, ui) => {
+        $.ajax({
+          type: 'PUT',
+          url: ui.item.data('update-url'),
+          dataType: 'json',
+          data: { thought: {row_order_position: ui.item.index() } }
+        })
+      }
+    });
+  });
+</script>
+
 <div class="header">
   <h1><%=@place.location%></h1>
   <br>
@@ -11,7 +26,7 @@
 <div class="photos"></div>
 <div class="col-10 offset-1 thoughts">
     <% @place.thoughts.rank(:row_order).each do |thought|%>
-      <div class="thought row">
+      <div data-update-url="<%= place_thoughts_path(@place) %>/<%=thought.id%>" class="thought row">
         <% if thought.favorite %>
           <h5 class="fav" style="color: #AFEEEE">&starf;</h5>
         <% else %>
